@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feiyang Yang · 个人主页</title>
+<meta name="description" content="Feiyang Yang (felix) 的个人主页">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #1a1a18;
+    --muted: #6b6b66;
+    --accent: #2f5d3a;
+    --line: #e6e4de;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    line-height: 1.7;
+  }
+  main { max-width: 36rem; width: 100%; text-align: left; }
+  .kicker {
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.35em;
+    margin-bottom: 1.2rem;
+  }
+  h1 {
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .aka {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .bio {
+    margin-top: 1.6rem;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 30rem;
+  }
+  nav {
+    margin-top: 2.4rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    display: inline-block;
+    padding: 0.55rem 1.3rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  nav a:hover {
+    border-color: var(--accent);
+    background: #f0f4ef;
+  }
+  footer {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <main>
+    <p class="kicker">你好，我是</p>
+    <h1>Feiyang Yang</h1>
+    <p class="aka">felix</p>
+    <p class="bio">这是我的个人主页，用来记录学习、项目和想法。内容会慢慢补充，欢迎常来看看。</p>
+    <nav>
+      <a href="mailto:feiyang.yang0627@gmail.com">邮箱联系</a>
+      <a href="https://github.com/yangfeiyang-123" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </main>
+  <footer>© 2026 Feiyang Yang · felixyangucas.com</footer>
+</body>
+</html>
