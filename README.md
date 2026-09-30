@@ -47,8 +47,8 @@ All assets are local; there are no analytics, cookies, external fonts, or runtim
 framework dependencies. Update content in `index.html`, styling in `styles.css`,
 and diagrams in `assets/`.
 
-After Pages completes, `Verify published website` checks the deployed commit and
-compares the public HTML, CSS, JavaScript, and image bytes with the checkout.
+On each push to `main`, `Verify published website` checks the published content and
+compares the public HTML, CSS, JavaScript, and image bytes with that commit’s checkout.
 It checks HTTPS and the existing HTTP URL, retries CDN propagation, and records
 exact hashes. TLS verification is never disabled. A failed HTTPS check is an
 explicit workflow failure even if HTTP succeeds.
