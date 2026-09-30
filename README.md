@@ -29,8 +29,8 @@ verify the custom-domain page. Keep `CNAME` unchanged.
 - PriDex and MuscleMimic are research projects, described from the owner’s
   supplied research brief. No publication acceptance, author list, performance
   metric, or full-court humanoid capability is asserted.
-- TactoForge: [public benchmark documentation](https://github.com/mxp1234/TactoForge)
-  and [stamp modality experiment configurations](https://github.com/mxp1234/TactoForge/tree/experiment/stamp-modalities-v2-20260926/configs/experiments/stamp_modalities_v2).
+- The tactile-learning section describes broad research interests supplied by the
+  owner. It does not cite private repositories or disclose experiment details.
 - G1 pipeline: [ME139_Project](https://github.com/yangfeiyang-123/ME139_Project).
   Preserve the distinction between pipeline validation and trained skills.
 - Harbor: [public README](https://github.com/yangfeiyang-123/Harbor).
