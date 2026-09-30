@@ -22,6 +22,13 @@ GitHub’s `pages build and deployment` workflow. Push a reviewed, validated com
 to `main`, check that workflow’s build and deploy jobs for the exact commit, then
 verify the custom-domain page. Keep `CNAME` unchanged.
 
+## Layout
+
+A compact academic layout uses an 800px reading column, white background,
+restrained blue links, and consistent research rows with small illustrations.
+On small screens, research rows stack for readability. The biography and primary
+contact links appear together at the top.
+
 ## Content and visual sources
 
 - Name, Felix alias, public contact address, and GitHub link retain the original
