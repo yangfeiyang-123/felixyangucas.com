@@ -1,0 +1,38 @@
+name: Diagnose custom-domain HTTPS
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/diagnose-https.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read Pages certificate and domain status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/yangfeiyang-123/felixyangucas.com/pages --jq '{status, build_type, cname, html_url, https_enforced, https_certificate}'
+          gh api repos/yangfeiyang-123/felixyangucas.com/pages/health
+      - name: Inspect public DNS
+        if: always()
+        run: |
+          for record in A AAAA CAA CNAME; do
+            echo "felixyangucas.com ${record}"
+            dig +noall +answer felixyangucas.com "$record"
+          done
+          echo "Authoritative nameservers"
+          dig +noall +answer felixyangucas.com NS
+          echo "www CNAME"
+          dig +noall +answer www.felixyangucas.com CNAME
+      - name: Check HTTPS with certificate validation
+        if: always()
+        run: |
+          curl --head --fail --show-error --max-time 30 https://felixyangucas.com/
