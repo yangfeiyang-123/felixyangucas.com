@@ -1,0 +1,27 @@
+name: Verify published website
+
+on:
+  workflow_run:
+    workflows: [pages build and deployment]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out the deployed commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
+      - name: Validate source
+        run: python3 scripts/check.py
+      - name: Verify public page and assets
+        run: python3 scripts/verify_deployment.py
